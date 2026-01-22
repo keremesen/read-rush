@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback, useMemo } from "react";
 
 interface RsvpReaderProps {
   text: string;
@@ -10,16 +10,9 @@ interface RsvpReaderProps {
 }
 
 export function RsvpReader({ text, wpm, isPlaying, onComplete }: RsvpReaderProps) {
-  const [words, setWords] = useState<string[]>([]);
+  const words = useMemo(() => text.trim().split(/\s+/), [text]);
   const [index, setIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    // Split by whitespace but keep punctuation attached to words
-    const w = text.trim().split(/\s+/);
-    setWords(w);
-    setIndex(0);
-  }, [text]);
 
   const tick = useCallback(() => {
     setIndex((prev) => {

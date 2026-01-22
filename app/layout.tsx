@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Readify",
+  title: "ReadRush.",
   description: "Rapid Serial Visual Presentation (RSVP) Reader",
 };
 

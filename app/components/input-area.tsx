@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 import { PremiumModal } from "./premium-modal";
 
