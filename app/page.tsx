@@ -12,14 +12,12 @@ export default function Home() {
   const [text, setText] = useState("");
   const [wpm, setWpm] = useState(400);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [sessionKey, setSessionKey] = useState(0);
 
   const handleStart = (inputText: string, selectedWpm: number) => {
     setText(inputText);
     setWpm(selectedWpm);
     setAppState("reading");
     setIsPlaying(true);
-    setSessionKey((prev) => prev + 1);
   };
 
   const handleComplete = () => {
@@ -82,13 +80,7 @@ export default function Home() {
             <div className="text-sm font-mono text-zinc-400">{wpm} WPM</div>
           </div>
 
-          <RsvpReader
-            key={sessionKey}
-            text={text}
-            wpm={wpm}
-            isPlaying={isPlaying}
-            onComplete={handleComplete}
-          />
+          <RsvpReader text={text} wpm={wpm} isPlaying={isPlaying} onComplete={handleComplete} />
 
           {/* Reader Controls */}
           <div className="flex items-center gap-6">
@@ -132,7 +124,6 @@ export default function Home() {
                 onClick={() => {
                   // Replay
                   setAppState("reading");
-                  setSessionKey((prev) => prev + 1);
                   setIsPlaying(true);
                 }}
                 className="px-6 py-2 rounded-full border border-zinc-200 dark:border-zinc-700 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors"
