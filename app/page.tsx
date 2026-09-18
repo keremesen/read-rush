@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24 relative overflow-hidden">
       {/* Background Gradient Spot */}
-      <div className="absolute top-[-20%] left-[50%] -translate-x-1/2 w-[800] h-[800] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-[-20%] left-[50%] -translate-x-1/2 w-[800] h-[800] bg-accent/8 rounded-full blur-3xl pointer-events-none" />
 
       {appState === "idle" && (
         <div className="z-10 w-full max-w-4xl flex flex-col items-center gap-12">
@@ -146,7 +146,7 @@ export default function Home() {
 
       {/* Footer */}
       <div className="absolute bottom-4 text-xs text-zinc-400 font-medium">
-        ReadRush &copy; {new Date().getFullYear()} Built with ❤️ for speed readers.
+        ReadRush &copy; {new Date().getFullYear()} · Stay on the word that matters.
       </div>
     </main>
   );

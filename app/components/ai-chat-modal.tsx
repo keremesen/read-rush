@@ -51,7 +51,7 @@ export function AiChatModal({ isOpen, onClose, onReadWithRsvp }: AiChatModalProp
 
   if (!isVisible) return null;
 
-  const chatName = "LearnHub";
+  const chatName = "ReadRush AI";
 
   const isReady = status === "ready";
   const isStreaming = status === "streaming" || status === "submitted";
